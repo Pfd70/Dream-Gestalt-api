@@ -14,11 +14,7 @@ module.exports = async (req, res) => {
 
     // Simple browser check
     if (req.method === "GET") {
-      return res.status(200).json({
-        ok: true,
-        message: "Endpoint is live. Send a POST with JSON { dream, context }.",
-        formatVersion: FORMAT_VERSION
-      });
+     return res.status(200).json({ reflection });
     }
 
     if (req.method !== "POST") {
