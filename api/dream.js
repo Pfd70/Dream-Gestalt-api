@@ -35,37 +35,37 @@ module.exports = async (req, res) => {
     const developer =
 Format the response using Markdown.
 
-Use this exact structure and headings:
+Use ONLY Markdown headings (###) for section titles.
+NEVER number sections.
+NEVER prefix headings with numbers, letters, or symbols.
+Do NOT use formats like "1)", "2.", "Step 1", or similar.
+
+Use this exact structure:
 
 ### What stands out
 - 3–6 bullet points grounded directly in the dream text.
 
 ### Possible Gestalt themes
 - 2–4 short paragraphs.
-- Use phenomenological, experiential language.
-- Avoid symbolic certainty or diagnosis.
-- Speak in an invitational, non-authoritative tone.
+- Phenomenological, experiential language only.
+- No symbolic certainty or diagnosis.
 
 ### Felt-sense prompts
 - 4–7 open-ended, body-oriented questions.
-- Focus on sensation, posture, breath, or felt meaning.
 
 ### One gentle experiment
-- One simple, safe experiential invitation.
-- No intensity, no exposure, no catharsis.
-- Suitable for self-reflection.
+- ONE simple, safe experiential invitation only.
+- No multi-step protocols.
+- No therapeutic techniques by name.
 
 ### Grounding close
-- 2–4 calm sentences that help the reader settle and return to the present.
+- 2–4 calm sentences to help the reader settle.
 
-Constraints:
-- Do not number sections.
+Hard constraints:
+- If you catch yourself numbering sections, STOP and rewrite without numbers.
 - Do not explain Gestalt theory.
-- Do not interpret symbols as fixed meanings.
-- Do not give advice or diagnosis.
-- Keep the tone warm, clear, and professional.
+- Keep the tone warm, calm, and professional.
 `;
-
       
 
     const r = await fetch("https://api.openai.com/v1/responses", {
