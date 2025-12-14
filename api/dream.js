@@ -33,13 +33,40 @@ module.exports = async (req, res) => {
       "Do not diagnose. Do not claim definitive meanings.";
 
     const developer =
-      "Output with headings:\n" +
-      "1) What stands out\n" +
-      "2) Possible Gestalt themes\n" +
-      "3) Felt-sense prompts\n" +
-      "4) One safe experiment\n" +
-      "5) Grounding close\n\n" +
-      "Constraints: No symbolic dictionary. No certainty. Warm, uncomplicated tone.";
+Format the response using Markdown.
+
+Use this exact structure and headings:
+
+### What stands out
+- 3–6 bullet points grounded directly in the dream text.
+
+### Possible Gestalt themes
+- 2–4 short paragraphs.
+- Use phenomenological, experiential language.
+- Avoid symbolic certainty or diagnosis.
+- Speak in an invitational, non-authoritative tone.
+
+### Felt-sense prompts
+- 4–7 open-ended, body-oriented questions.
+- Focus on sensation, posture, breath, or felt meaning.
+
+### One gentle experiment
+- One simple, safe experiential invitation.
+- No intensity, no exposure, no catharsis.
+- Suitable for self-reflection.
+
+### Grounding close
+- 2–4 calm sentences that help the reader settle and return to the present.
+
+Constraints:
+- Do not number sections.
+- Do not explain Gestalt theory.
+- Do not interpret symbols as fixed meanings.
+- Do not give advice or diagnosis.
+- Keep the tone warm, clear, and professional.
+`;
+
+      
 
     const r = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",
