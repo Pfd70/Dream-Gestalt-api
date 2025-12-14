@@ -97,14 +97,15 @@ Hard constraints:
     const data = JSON.parse(textRaw);
 
     const reflection =
-      (data.output || [])
-        .flatMap(o => o.content || [])
-        .filter(c => c.type === "output_text")
-        .map(c => c.text)
-        .join("\n\n") || "No reflection text returned.";
+      let reflection =
+  (data.output || [])
+    .flatMap(o => o.content || [])
+    .filter(c => c.type === "output_text")
+    .map(c => c.text)
+    .join("\n\n") || "No reflection text returned.";
 
-    return res.status(200).json({ reflection });
-  } catch (err) {
-    return res.status(500).json({ error: "Function crashed", details: String(err) });
-  }
-};
+// Remove numbered section prefixes like "1) ", "2. ", "3 - "
+reflection = reflection.replace(
+  /^\s*\d+\s*[\)\.\-:]\s*/gm,
+  ""
+);
