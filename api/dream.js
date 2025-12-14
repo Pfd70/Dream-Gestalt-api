@@ -112,10 +112,7 @@ Hard constraints:
       .map(line => line.replace(/^\s*(?:\uFEFF)?step\s*\d+\s*[:\)\.\-]\s*/iu, "")) // removes "Step 1:"
       .join("\n");
 
-    return res.status(200).json({
-      reflection,
-      formatVersion: FORMAT_VERSION
-    });
+    return res.status(200).json({ reflection });
   } catch (err) {
     return res.status(500).json({ error: "Function crashed", details: String(err) });
   }
